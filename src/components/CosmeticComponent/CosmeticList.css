@@ -3,11 +3,123 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
 }
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
-.fas.fa-star.filled {
+.margin-top {
+  margin-top: 50px;
+}
+
+.side-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 200px;
+  min-width: 200px;
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.search-bar {
+  width: 600px;
+  height: 25px;
+  border-radius: 100px;
+  padding: 5px;
+  padding-left: 20px;
+  border: 0.5px solid #6610f280;
+  border-color: #6610f280;
+  -webkit-appearance: none;
+}
+
+.select-bar {
+  width: 175px;
+  height: 37px;
+  border-radius: 100px;
+  padding: 5px 30px 5px 20px;
+  border: 0.5px solid #6610f280;
+  color: #6610f2;
+  font-weight: 400;
+  background-size: 20px 20px;
+  background-position: calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  margin-right: 100px;
+  -webkit-appearance: none;
+}
+
+.margin-botton {
+  margin-bottom: 10px;
+}
+
+.filter-font {
+  color: #494949;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.16px;
+}
+
+.filter-button {
+  width: 90px;
+  height: 35px;
+  border-radius: 100px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid rgba(102, 16, 242, 0.5);
+  margin-bottom: 10px;
+  margin-right: 10px;
+
+  border-color: #6610f280;
+  background-color: white;
+  color: #6610f2;
+}
+
+.filter-selected-button {
+  background-color: rgba(102, 16, 242, 1) !important;
+  color: white;
+  width: 90px;
+  height: 35px;
+  border-radius: 100px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid rgba(102, 16, 242, 0.5);
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.search-bar:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.select-bar:focus {
+  outline: none;
+  border: 0.5px solid #6610f280;
+}
+
+.filter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  width: 85%;
+  min-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.search-icon {
+  margin-left: -30px;
+  color: #6f42c1;
+}
+
+.fa-star {
   color: #86bd2c;
 }
 
@@ -25,16 +137,16 @@
 
 .product {
   margin: 0 auto;
-  max-width: 300px;
-  max-height: 500px !important;
-  min-width: 300px;
-  min-height: 500px;
+  max-width: 250px;
+  max-height: 250px !important;
+  min-width: 250px;
+  min-height: 250px;
   padding: 20px;
 }
 
 .product-image {
-  max-width: 400px;
-  max-height: 200px;
+  max-width: 200px;
+  max-height: 180px;
   height: auto;
   margin: 0 auto 10px;
 }
@@ -57,18 +169,97 @@
 
 .product-category {
   font-size: 14px;
-  color: #666;
+  color: white;
+  width: 60px;
+  padding: 4px;
+
+  text-align: center;
+  border-radius: 3px;
+  background-color: #6f42c1;
 }
 
 ::-webkit-scrollbar {
-  width: 3.06px; 
+  width: 3.06px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6f42c1; 
-  border-radius: 5px; 
+  background: #6f42c1;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #86bd2c;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #86bd2c;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-price {
+  float: right;
+}
+
+.fa-regular.fa-star {
+  margin-left: 15px;
 }
