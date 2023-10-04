@@ -1,10 +1,9 @@
-import React from 'react';
-import './Header.css';
+import React from "react";
+import "./Header.css";
 
 function Header() {
   return (
     <div className="header-container">
-    
       <img
         src="/images/synvia_logo.png"
         alt="Imagem Esquerda"

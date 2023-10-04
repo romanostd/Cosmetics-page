@@ -97,50 +97,59 @@ function CosmeticList() {
       <div className="filter-grid">
         <div>
           <input
-          className="search-bar"
+            className="search-bar"
             type="text"
             placeholder="Pesquisar por nome, categoria ou preço"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <span className="fa-solid fa-magnifying-glass search-icon"></span> 
+          <span className="fa-solid fa-magnifying-glass search-icon"></span>
         </div>
         <div className="sort-select">
-  <select
-    className="select-bar"
-    value={sortOption}
-    onChange={(e) => setSortOption(e.target.value)}
-  >
-    <option value="">Ordenar por</option>
-    <option value="asc-price">Preço Ascendente</option>
-    <option value="desc-price">Preço Descendente</option>
-    <option value="asc-name">Nome Ascendente</option>
-    <option value="desc-name">Nome Descendente</option>
-  </select>
-</div>
-
+          <select
+            className="select-bar"
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+          >
+            <option value="">Ordenar por</option>
+            <option value="asc-price">Preço Ascendente</option>
+            <option value="desc-price">Preço Descendente</option>
+            <option value="asc-name">Nome Ascendente</option>
+            <option value="desc-name">Nome Descendente</option>
+          </select>
+        </div>
       </div>
       <div className="main-container">
         <div className="side-filter">
           <div className="category-buttons">
-          <div className="filter-font margin-botton">Filtrar por categoria</div>
+            <div className="filter-font margin-botton">
+              Filtrar por categoria
+            </div>
             <button
               className={
-                selectedCategories.includes("pencil") ? "filter-selected-button" : "filter-button"
+                selectedCategories.includes("pencil")
+                  ? "filter-selected-button"
+                  : "filter-button"
               }
               onClick={() => toggleCategory("pencil")}
             >
               Pencil
             </button>
             <button
-              className={selectedCategories.includes("cream") ? "filter-selected-button" : "filter-button"}
+              className={
+                selectedCategories.includes("cream")
+                  ? "filter-selected-button"
+                  : "filter-button"
+              }
               onClick={() => toggleCategory("cream")}
             >
               Cream
             </button>
             <button
               className={
-                selectedCategories.includes("palette") ? "filter-selected-button" : "filter-button"
+                selectedCategories.includes("palette")
+                  ? "filter-selected-button"
+                  : "filter-button"
               }
               onClick={() => toggleCategory("palette")}
             >
@@ -148,7 +157,9 @@ function CosmeticList() {
             </button>
             <button
               className={
-                selectedCategories.includes("lipstick") ? "filter-selected-button" : "filter-button"
+                selectedCategories.includes("lipstick")
+                  ? "filter-selected-button"
+                  : "filter-button"
               }
               onClick={() => toggleCategory("lipstick")}
             >
@@ -156,7 +167,9 @@ function CosmeticList() {
             </button>
             <button
               className={
-                selectedCategories.includes("liquid") ? "filter-selected-button" : "filter-button"
+                selectedCategories.includes("liquid")
+                  ? "filter-selected-button"
+                  : "filter-button"
               }
               onClick={() => toggleCategory("liquid")}
             >
@@ -164,7 +177,9 @@ function CosmeticList() {
             </button>
             <button
               className={
-                selectedCategories.includes("powder") ? "filter-selected-button" : "filter-button"
+                selectedCategories.includes("powder")
+                  ? "filter-selected-button"
+                  : "filter-button"
               }
               onClick={() => toggleCategory("powder")}
             >
@@ -174,36 +189,41 @@ function CosmeticList() {
 
           <div className="filter-font">Filtrar por favoritos</div>
           <label className="switch">
-  <input
-    type="checkbox"
-    checked={showFavorites}
-    onChange={() => setShowFavorites(!showFavorites)}
-  />
-  <span className="slider round"></span>
-</label>
+            <input
+              type="checkbox"
+              checked={showFavorites}
+              onChange={() => setShowFavorites(!showFavorites)}
+            />
+            <span className="slider round"></span>
+          </label>
         </div>
         <div className="product-grid">
-          {sortCosmetics(filteredCosmetics.filter(filterByCategory)).map(
-            (cosmetic) => (
-              <div
-                key={cosmetic.id}
-                onMouseEnter={() => toggleFavoriteIcon(cosmetic.id)}
-                onMouseLeave={() => hideFavoriteIcon(cosmetic.id)}
-                className={`product ${
-                  showFavorites && !favoriteCosmetics.includes(cosmetic)
-                    ? "hidden"
-                    : ""
-                }`}
-              >
-                <img
-                  src={cosmetic.image_link}
-                  alt={cosmetic.name}
-                  width={200}
-                  height={200}
-                  className="product-image"
-                />
-                <div className="product-details">
-                  <div className="product-price">R$ {cosmetic.price}  <i
+          {sortCosmetics(
+            filteredCosmetics
+              .filter(filterByCategory)
+              .filter((cosmetic) => cosmetic.image_link)
+          ).map((cosmetic) => (
+            <div
+              key={cosmetic.id}
+              onMouseEnter={() => toggleFavoriteIcon(cosmetic.id)}
+              onMouseLeave={() => hideFavoriteIcon(cosmetic.id)}
+              className={`product ${
+                showFavorites && !favoriteCosmetics.includes(cosmetic)
+                  ? "hidden"
+                  : ""
+              }`}
+            >
+              <img
+                src={cosmetic.image_link}
+                alt={cosmetic.name}
+                width={200}
+                height={200}
+                className="product-image"
+              />
+              <div className="product-details">
+                <div className="product-price">
+                  R$ {cosmetic.price}{" "}
+                  <i
                     onClick={() => {
                       toggleFavorite(cosmetic);
                       toggleFavoriteIcon(cosmetic.id);
@@ -215,14 +235,14 @@ function CosmeticList() {
                         ? "fa-solid fa-star"
                         : " "
                     }`}
-                  ></i></div>
-                 
-                  <div className="product-name filter-font">{cosmetic.name}</div>
-                  <div className="product-category">{cosmetic.category}</div>
+                  ></i>
                 </div>
+
+                <div className="product-name filter-font">{cosmetic.name}</div>
+                <div className="product-category">{cosmetic.category}</div>
               </div>
-            )
-          )}
+            </div>
+          ))}
         </div>
       </div>
     </div>

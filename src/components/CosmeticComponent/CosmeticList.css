@@ -4,7 +4,10 @@
   gap: 20px;
   justify-content: space-between;
   width: 65%;
+  max-width: 1500px;
   margin: 0 auto;
+  max-height: 600px;
+  overflow-y: auto;
 }
 .main-container {
   display: flex;
@@ -13,7 +16,9 @@
 }
 
 .margin-top {
-  margin-top: 50px;
+  margin-top: 50px !important;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 .side-filter {
@@ -109,6 +114,7 @@
   gap: 20px;
   justify-content: space-between;
   width: 85%;
+  max-width: 2000px !important;
   min-width: 1000px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -137,11 +143,11 @@
 
 .product {
   margin: 0 auto;
-  max-width: 250px;
-  max-height: 250px !important;
-  min-width: 250px;
-  min-height: 250px;
+  width: 175px;
+  max-height: 300px !important;
+  min-height: 300px;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .product-image {
