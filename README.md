@@ -1,4 +1,4 @@
-# Synvia Challenge
+# FrontEnd Challenge
 
 Esta é uma aplicação web que lista e detalha cosméticos. Você pode filtrar, ordenar e marcar cosméticos como favoritos.
 
