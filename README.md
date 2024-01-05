@@ -1,21 +1,21 @@
 # FrontEnd Challenge
 
-Esta é uma aplicação web que lista e detalha cosméticos. Você pode filtrar, ordenar e marcar cosméticos como favoritos.
+This is a web application that lists and details cosmetics. You can filter, sort, and mark cosmetics as favorites.
 
-## Como Executar
+## How to Run
 
-1. Clone este repositório.
-2. Instale as dependências usando `npm install`.
-3. Execute o aplicativo com `npm start`.
+1. Clone this repository.
+2. Install dependencies using `npm install`.
+3. Run the app with `npm start`.
 
-## Recursos e Funcionalidades
+## Features and Functionalities
 
-- Listagem de cosméticos com imagem, nome, preço e categoria.
-- Filtro por nome, categoria, preço e favoritos.
-- Ordenação ascendente/descendente por preço e nome.
+- Listing of cosmetics with image, name, price, and category.
+- Filters by name, category, price, and favorites.
+- Ascending/descending sorting by price and name.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - React
-- Axios (para fazer solicitações à API)
-- FontAwesome (para ícones)
+- Axios (for making API requests)
+- FontAwesome (for icons)
